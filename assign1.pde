@@ -19,6 +19,8 @@ void setup() {
   robotY = floor(random(2, 6)); //2,3,4,5
   
   laserX = robotX; // 雷射光和機器人出現於同個點
+  
+  noStroke();
 }
 
 void draw() {
@@ -34,12 +36,11 @@ void draw() {
   pushMatrix();
   translate(590,50);
   
-  noStroke(); //內太陽
-  fill(255, 255, 0);
+  fill(255,255,0); //外太陽
+  ellipse(0,0,125,125);
+ 
+  fill(253, 184, 19); // 內太陽
   ellipse(0,0,120,120);
-  
-  fill(253, 184, 19); //外太陽
-  ellipse(0,0,115,115);
   
   popMatrix();
   
@@ -57,7 +58,8 @@ void draw() {
   laserOffset %= 185; // 雷射光在格子80*2+25的範圍內重複
   laserX = robotX - laserOffset; // 雷射光遠離robotX的距離隨著雷射光偏移量推進
   
-  arc(laserX, robotY*80+37, 10, 10, radians(90), radians(270), OPEN); //雷射光形狀
+  fill(255, 0, 0); // 雷射光
+  arc(laserX, robotY*80+37, 10, 10, radians(90), radians(270), OPEN);
   rect(laserX, robotY*80+37-5,30,10);
   arc(laserX+30, robotY*80+37, 10, 10, PI+HALF_PI, TWO_PI+HALF_PI, OPEN);
   
