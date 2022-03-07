@@ -5,12 +5,12 @@ int soldierX, soldierY, robotX, robotY, laserX, d;
 void setup() {
   
 	size(640, 480, P2D);
-  bg = loadImage("bg.jpg");
-  soil = loadImage("soil.png");
-  life = loadImage("life.png");
-  groundhog = loadImage("groundhog.png");
-  soldier = loadImage("soldier.png");
-  robot = loadImage("robot.png");
+  bg = loadImage("img/bg.jpg");
+  soil = loadImage("img/soil.png");
+  life = loadImage("img/life.png");
+  groundhog = loadImage("img/groundhog.png");
+  soldier = loadImage("img/soldier.png");
+  robot = loadImage("img/robot.png");
   
   soldierY = floor(random(2, 6)); //2,3,4,5
   
