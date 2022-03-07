@@ -1,5 +1,5 @@
 PImage bg, soil, life, groundhog, soldier, robot;
-int soldierX, soldierY, robotX, robotY, laserX, d;
+int soldierX, soldierY, robotX, robotY, laserX, d; //d 距離
 
 
 void setup() {
@@ -56,9 +56,9 @@ image(life,150,10);
   //image robot
   image(robot, robotX, robotY*80);
   
-  d += 2;
+  d += 2; //速度2pixel
   d %= 185;
-  laserX = robotX - d;
+  laserX = robotX - d; //遠離robotX的距離
   
   
   arc(laserX, robotY*80+37, 10, 10, radians(90), radians(270), OPEN);
