@@ -13,12 +13,12 @@ void setup() {
   soldier = loadImage("img/soldier.png");
   robot = loadImage("img/robot.png");
   
-  soldierY = floor(random(2, 6)); // 士兵隨機出現在第2/3/4/5列(土地部分，一列80pix）
+  soldierY = floor(random(2, 6)); //士兵隨機出現在第2/3/4/5列(土地部分，一列80pix）
   
   robotX = floor(random(160, 560)); //機器人隨機出現在x軸，但起始點在x=160以後
   robotY = floor(random(2, 6)); //2,3,4,5
   
-  laserX = robotX; // 雷射光和機器人出現於同個點
+  laserX = robotX; //雷射光和機器人出現於同個點
   
   noStroke();
 }
@@ -44,21 +44,21 @@ void draw() {
   
   popMatrix();
   
-  image(groundhog, 280,80); // groundhog
+  image(groundhog, 280,80); //groundhog
   
   //soldier
   soldierX = soldierX+1; //士兵前進
-  soldierX %= 640; // 在畫布內重複行走
-  image(soldier, soldierX++, soldierY*80); // soldierY(列數) * 80pix = Y座標
+  soldierX %= 640; //在畫布內重複行走
+  image(soldier, soldierX++, soldierY*80); //soldierY(列數) * 80pix = Y座標
   
   //robot
   image(robot, robotX, robotY*80); //robotY(列數) * 80pix = Y座標
   
-  laserOffset += 2; // 雷射光偏移量速度2pix
-  laserOffset %= 185; // 雷射光在格子80*2+25的範圍內重複
-  laserX = robotX - laserOffset; // 雷射光遠離robotX的距離隨著雷射光偏移量推進
+  laserOffset += 2; //雷射光偏移量速度2pix
+  laserOffset %= 185; //雷射光在格子80*2+25的範圍內重複
+  laserX = robotX - laserOffset; //雷射光遠離robotX的距離隨著雷射光偏移量推進
   
-  fill(255, 0, 0); // 雷射光
+  fill(255, 0, 0); //雷射光
   arc(laserX, robotY*80+37, 10, 10, radians(90), radians(270), OPEN);
   rect(laserX, robotY*80+37-5,30,10);
   arc(laserX+30, robotY*80+37, 10, 10, PI+HALF_PI, TWO_PI+HALF_PI, OPEN);
