@@ -48,7 +48,7 @@ void draw() {
   
   //soldier
   soldierX = soldierX+1; //士兵前進
-  soldierX %= 640; //在畫布內重複行走
+  soldierX %= 640+1; //在畫布內重複行走
   image(soldier, soldierX++, soldierY*80); //soldierY(列數) * 80pix = Y座標
   
   //robot
