@@ -1,5 +1,6 @@
 PImage bg, soil, life, groundhog, soldier, robot;
-int soldierX, soldierY; //士兵
+int soldierX= -80;
+int soldierY; //士兵
 int robotX, robotY; //機器人
 int laserX, laserOffset; //雷射光、雷射光偏移量
 
@@ -48,7 +49,7 @@ void draw() {
   
   //soldier
   soldierX = soldierX+1; //士兵前進
-  soldierX %= 640+80; //在畫布內重複行走
+  soldierX %= 640; //在畫布內重複行走
   image(soldier, soldierX++, soldierY*80); //soldierY(列數) * 80pix = Y座標
   
   //robot
