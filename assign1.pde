@@ -36,11 +36,12 @@ void draw() {
   pushMatrix();
   translate(590,50);
   
-  fill(255,255,0); //外太陽
-  ellipse(0,0,125,125);
- 
-  fill(253, 184, 19); // 內太陽
-  ellipse(0,0,120,120);
+  //outer sun
+  fill(255, 255, 0);
+  ellipse(width-50, 50, 130, 130);  
+  //inner sun
+  fill(253, 184, 19);
+  ellipse(width-50, 50, 120, 120);
   
   popMatrix();
   
